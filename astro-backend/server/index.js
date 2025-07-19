@@ -28,7 +28,7 @@ app.post('/api/users', async (req, res) => {
   try {
     const ex_user = await Users.find({email : req.body.email});
      console.log(ex_user)
-    if(ex_user){
+    if(ex_user.length === 1){
       console.log(ex_user)
       res.status(200).json(ex_user)
     }
